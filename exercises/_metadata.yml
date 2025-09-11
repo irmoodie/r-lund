@@ -1,0 +1,5 @@
+author:
+  - name: Iain R. Moodie
+bibliography: ../references.bib
+csl: ../the-american-naturalist.csl
+citations-hover: true

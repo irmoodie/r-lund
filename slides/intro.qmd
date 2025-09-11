@@ -1,0 +1,94 @@
+---
+title: Introduction to programming in R
+author: 
+  - Etka Yapar
+  - Iain Moodie
+  - Jamie Scotcher
+  - Rae Engert
+  - Ximena Alva Caballero
+draft: false
+date: 2025-09-11
+subtitle: "Open R Sessions 2025"
+---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+# Introduction to the course {background-color="#61599d"}
+
+
+```{webr}
+#| edit: false
+#| echo: false
+#| output: false
+options("readr.edition" = 1)
+
+theme_set(theme_bw(base_size = 20) + theme(aspect.ratio = 1))
+```
+
+## Introduction to the course
+### What is R?
+
+- {{< iconify devicon:r size=xl >}} is...
+  - a "free software environment for statistical computing and graphics"
+  - a programming language
+  - widely used in biosciences, pharamacology, and generally statistics
+  - cutting edge in many areas of data science / statistics
+  - also used extensively in many advanced level courses (e.g. BIOS13/BIOS15) and some basic courses (e.g. BIOB11/BIOC13)
+
+## Introduction to the course
+### What is R?
+
+```{webr}
+print("Hello, World!")
+```
+
+```{webr}
+x <- 12
+y <- 4
+
+x * y
+```
+
+## Introduction to the course
+### What is R?
+
+```{webr}
+data <- data.frame(session = 1:11, ability = cumsum(1:11*0.9))
+plot(data$session, data$ability, type = "b", xlab = "Session", ylab = "R Ability")
+```
+
+## Introduction to the course
+### What can you expect from this course?
+
+- We will cover the fundamentals of programming in R
+  - Concepts are mostly generic (can be applied to other high level programming languages)
+- A strong foundation, not domain specific knowledge
+  - You can build on depending on your interests/needs/goals
+- A friendly, welcoming and collaborative environment
+
+## Introduction to the course
+### What this course is not
+
+- A statistics course
+  - But this will prepare you for statistics courses
+  - And we can often help you with implementation issues
+- A credited course
+  - No additional stress of assignments or exams
+  - Come when you can
+  - Use the sessions how works best for you
+
+## Introduction to the course
+### The format
+
+- Thursdays 15:15 - 17:00
+- A series of topics, each building on the previous one
+  - Short lecture (15-30 mins) and themed exercises (1hr 30 mins)
+  - During the exercise sessions, you can also work on your own things / ask questions
+- All materials / lectures will be on Canvas
+  - Follow in your own time, revisit topics,  catch up on missed ones
+  - Don't worry if you can't make it to all sessions!
+- Open R Sessions also runs "drop-in" only in the spring semester
+
+# Exercises {background-color="#61599d"}
+
+# Questions {background-color="#61599d"}
