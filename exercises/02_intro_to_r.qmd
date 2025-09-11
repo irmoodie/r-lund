@@ -167,8 +167,6 @@ The order your commands come in matters.
 
 ---
 
-Depending on how much coding you have done previously, that was either all new and potentially overwhelming, or very basic. 
-
 # Games
 
 Previous members of the Open R Team have coded some games in R:
