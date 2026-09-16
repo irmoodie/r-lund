@@ -27,8 +27,8 @@ website:
             text: "1) How to install R and RStudio"
           - href: exercises/02_intro_to_r.qmd
             text: "2) Introduction to R and RStudio"
-          - href: exercises/3_r_concepts.qmd
-            text: "3) Programming concepts in R (Online)"
+          # - href: exercises/3_r_concepts.qmd
+          #   text: "3) Programming concepts in R (Online)"
 
 format:
   html:
@@ -38,7 +38,7 @@ format:
     code-overflow: wrap
     toc: true
     link-external-newwindow: true
-    link-external-filter: ^(?:http:|https:)\\/\\/irmoodie\\.com\\/custom
+    link-external-filter: '^(?:http:|https):\/\/irmoodie\.com\/custom'
 execute:
   freeze: auto
 

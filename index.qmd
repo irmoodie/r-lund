@@ -1,6 +1,6 @@
 ---
 title: "Open R Sessions (Iain's materials)"
-subtitle: "2025-26"
+subtitle: "2026-27"
 ---
 
 This website hosts Iain's materials for the Open R Sessions.
