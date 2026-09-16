@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,16 @@
 
 <title>Introduction to R and RStudio – Open R Sessions (Lund)</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -72,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-723b771237f1900da4361526b46ab816.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9b13bcbc2a27904a566727dc7856a9e6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -174,12 +180,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">2) Introduction to R and RStudio</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../exercises/3_r_concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3) Programming concepts in R (Online)</span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
@@ -276,21 +276,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="some-good-practises" class="level2">
 <h2 class="anchored" data-anchor-id="some-good-practises">Some good practises</h2>
 <p>It is possible to write comments in an R script that are not read by the computer. To do this, you start a line with a <code>#</code>. You can use this feature to write notes to yourself as you go, but you can also use it to give your script a title, so you remember what it does, or what it was for. For example, I might include at the start of my script:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Open R Sessions 01</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2025-09-11</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Open R Sessions 01</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2025-09-11</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Add something similar to your script.</p>
 <p>Another common practise is to include the command <code>rm(list=ls())</code> at the start of an R scripts. This command will clear the R environment of all variables. It helps to make sure that your script will always run the same no matter who runs it. Add this line to the top of your script now.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Open R Sessions 01</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Open R Sessions 01</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2025-09-11</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Another good practise is to declare your working directory at the start of a script. You can do this using the <code>setwd()</code> we encountered before.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Open R Sessions 01</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Open R Sessions 01</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2025-09-11</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(write your directory here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(write your directory here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Remember to save your script!</p>
 <p>You are now setup to do some coding!</p>
 </section>
@@ -299,9 +299,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Exercises</h1>
 <section id="importing-data-to-r" class="level2">
 <h2 class="anchored" data-anchor-id="importing-data-to-r">Importing data to R</h2>
-<p>You will often want to use R to analyse some of your data. The first step is naturally to import it into R. On the canvas page, you can download a dataset called <code>Simple_data.txt</code>. Download it and move it to the folder you set as a working folder. Most of you are used to working with data in Excel files and not text files. Don’t worry! We will talk more about file types in the coming sessions. For now, you want to import the file with <code>read.delim()</code>. First, write the command <code>list.files()</code> into your script, and run it. This lists all the files in your working directory. Does the <code>.txt</code> files appear? If so, then write and run <code>data &lt;- read.delim("Simple_data.txt", head=T, sep="\t")</code>.</p>
+<p>You will often want to use R to analyse some of your data. The first step is naturally to import it into R. On the canvas page, you can download a dataset called <code>Simple_data.txt</code>. Download it and move it to the folder you set as a working folder. Most of you are used to working with data in Excel files and not text files. Don’t worry! We will talk more about file types in the coming sessions. For now, you want to import the file with <code>read.delim()</code>. First, write the command <code>list.files()</code> into your console, and run it.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This lists all the files in your working directory. Does the <code>.txt</code> files appear? If so, then write and run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">"Simple_data.txt"</span>, <span class="at">head=</span>T, <span class="at">sep=</span><span class="st">"</span><span class="sc">\t</span><span class="st">"</span>).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The data file has now been imported to R and stored in the object <code>data</code>. An easy way of getting an overview of the data is by looking at the top 5 rows with the command <code>head(data)</code>. To see the whole file, you can also open it by clicking on the object which has now appeared in the Global Environment. As you can see, it contains four columns with information on some of Simon’s samples of lark species. Return to the script by clicking on the correct tab. To get some basic summary statistics of the datafile you can try a few other commands.</p>
-<p>Try <code>str(data)</code>, <code>table(data$Species)</code>, <code>table(data$Sex)</code>, and <code>table(data$Species, data$Sex)</code>.</p>
+<p>Try:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>Species)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>Sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>Species, data<span class="sc">$</span>Sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Now, try on your own to make a table containing the number of individuals of each population and species.</p>
 <p>Hopefully, this will give you a very fast idea of some of the content of this data. More on importing files and the <code>str()</code> command in the coming sessions!</p>
 </section>
@@ -309,19 +316,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="r-as-a-very-powerful-calculator">R as a very powerful calculator</h2>
 <p>One of the many ways of using R is simply to use it as a calculator. You just need to write the formula you desire to calculate and R will do it immediately. Note that R will always follow the mathematical calculation priorities. These priorities can be overruled with the use of parenthesis. Some mathematical operators used in R are the following: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>^</code>. Here are some examples:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">23</span><span class="sc">+</span><span class="dv">13</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dv">23</span><span class="sc">+</span><span class="dv">13</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 36</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="sc">*</span><span class="dv">5</span><span class="sc">+</span><span class="dv">7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="sc">*</span><span class="dv">5</span><span class="sc">+</span><span class="dv">7</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 27</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="sc">*</span>(<span class="dv">5</span><span class="sc">+</span><span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="sc">*</span>(<span class="dv">5</span><span class="sc">+</span><span class="dv">7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 48</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="sc">*</span>(<span class="dv">5</span><span class="sc">+</span><span class="dv">7</span>)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="sc">*</span>(<span class="dv">5</span><span class="sc">+</span><span class="dv">7</span>)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 576</code></pre>
 </div>
@@ -331,22 +338,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="creating-variables-in-r">Creating variables in R</h2>
 <p>In R, a variable is a name assigned to a value or a data object, which can be used to store data for later use. Variables in R can hold various types of data, including numbers, strings, vectors, lists, and more. We cover this in the next session. Variables are created using the assignment operator <code>&lt;-</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning a numeric value to a variable</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning a string value to a variable</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>course <span class="ot">&lt;-</span> <span class="st">"Open R Sessions"</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning a vector to a variable</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning a list to a variable</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>person <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">name =</span> <span class="st">"Alice"</span>, <span class="at">age =</span> <span class="dv">30</span>, <span class="at">occupation =</span> <span class="st">"Engineer"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning a numeric value to a variable</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning a string value to a variable</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>course <span class="ot">&lt;-</span> <span class="st">"Open R Sessions"</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning a vector to a variable</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning a list to a variable</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>person <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">name =</span> <span class="st">"Alice"</span>, <span class="at">age =</span> <span class="dv">30</span>, <span class="at">occupation =</span> <span class="st">"Engineer"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Notice that once you declare a variable, it appears in the environment tab.</p>
 <p>To print any object to the console in R, you can simply write its name:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>person</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>person</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$name
 [1] "Alice"
@@ -360,16 +367,16 @@ $occupation
 </div>
 <p>Let’s focus on the variable we just made called <code>x</code>. We can now use <code>x</code> in other commands. For example, we could find the square root of <code>x</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.162278</code></pre>
 </div>
 </div>
 <p>Notice that if we change what <code>x</code> is, we get a different answer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">42</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">42</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6.480741</code></pre>
 </div>
@@ -391,7 +398,7 @@ $occupation
 <p>Games 1 and 3 you can play along with a classmate/friend. Game 2 is played against the computer.</p>
 <p>To play these games we first need to “load” them into R. Run the following command fetch the code from GitHub, and create three functions used to play the games.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://gist.githubusercontent.com/irmoodie/ba17e016cd317cdeb9b169932c100c93/raw/a171462fdc5484574bcafd10b8fe7f4147af81c7/R_Intro_Games.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://gist.githubusercontent.com/irmoodie/ba17e016cd317cdeb9b169932c100c93/raw/a171462fdc5484574bcafd10b8fe7f4147af81c7/R_Intro_Games.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can see the full code here if you are interested: <a href="https://gist.github.com/irmoodie/ba17e016cd317cdeb9b169932c100c93">`R_Intro_Games.R</a>.</p>
 <section id="tic-tac-toe" class="level2">
@@ -416,33 +423,33 @@ $occupation
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>guessnumber <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"Welcome to our Guess the Number game"</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  name1 <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">"Write your name here: "</span>)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  name2 <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">"Write your friend's name here: "</span>)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  maxnum <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  numchosen <span class="ot">&lt;-</span> <span class="fu">sample.int</span>(maxnum, <span class="dv">1</span>)</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  winner <span class="ot">&lt;-</span> F</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">repeat</span> {</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    numguess <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">"Guess a number between 1 and 10: "</span>))</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    numguess2 <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">"Make your friend guess a number between 1 and 10: "</span>))</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (numguess <span class="sc">==</span> numchosen) {</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"The correct number was"</span>, numchosen, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"Congratulations,"</span>, name1, <span class="st">"you win!</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"I'm sorry,"</span>, name1, <span class="st">"your answer is incorrect.</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (numguess2 <span class="sc">==</span> numchosen) {</span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"The correct number was"</span>, numchosen, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"Congratulations,"</span>, name2, <span class="st">"you win!</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"I'm sorry,"</span>, name2, <span class="st">"your answer is incorrect.</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>guessnumber <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"Welcome to our Guess the Number game"</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  name1 <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">"Write your name here: "</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  name2 <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">"Write your friend's name here: "</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  maxnum <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  numchosen <span class="ot">&lt;-</span> <span class="fu">sample.int</span>(maxnum, <span class="dv">1</span>)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  winner <span class="ot">&lt;-</span> F</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">repeat</span> {</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    numguess <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">"Guess a number between 1 and 10: "</span>))</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    numguess2 <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">"Make your friend guess a number between 1 and 10: "</span>))</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (numguess <span class="sc">==</span> numchosen) {</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"The correct number was"</span>, numchosen, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"Congratulations,"</span>, name1, <span class="st">"you win!</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"I'm sorry,"</span>, name1, <span class="st">"your answer is incorrect.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (numguess2 <span class="sc">==</span> numchosen) {</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"The correct number was"</span>, numchosen, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"Congratulations,"</span>, name2, <span class="st">"you win!</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">"I'm sorry,"</span>, name2, <span class="st">"your answer is incorrect.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 
@@ -503,13 +510,14 @@ $occupation
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -524,7 +532,7 @@ $occupation
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp(/^(?:http:|https:)\\/\\/irmoodie\\.com\\/custom/);
+        var filterRegex = new RegExp("^(?:http:|https):\/\/irmoodie\.com\/custom");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

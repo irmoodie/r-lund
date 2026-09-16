@@ -6,17 +6,13 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.29">
+  <meta name="generator" content="quarto-1.10.18">
 
-  <meta name="author" content="Etka Yapar">
   <meta name="author" content="Iain Moodie">
-  <meta name="author" content="Jamie Scotcher">
-  <meta name="author" content="Rae Engert">
-  <meta name="author" content="Ximena Alva Caballero">
   <title>Open R Sessions (Lund) – Introduction to programming in R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -24,10 +20,16 @@
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -36,7 +38,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3cdb192ff84a2da0b9e85c5196929b61.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-849859c827e107c4b7ec018839bdcda6.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -131,7 +133,7 @@
   <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
   <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <meta property="og:title" content="Introduction to programming in R – Open R Sessions (Lund)">
-<meta property="og:description" content="Open R Sessions 2025">
+<meta property="og:description" content="Open R Sessions 2026">
 <meta property="og:site_name" content="Open R Sessions (Lund)">
 </head>
 <body class="quarto-light">
@@ -140,32 +142,12 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Introduction to programming in R</h1>
-  <p class="subtitle">Open R Sessions 2025</p>
+  <p class="subtitle">Open R Sessions 2026</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Etka Yapar 
-</div>
-</div>
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Iain Moodie 
-</div>
-</div>
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Jamie Scotcher 
-</div>
-</div>
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Rae Engert 
-</div>
-</div>
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Ximena Alva Caballero 
+Iain Moodie
 </div>
 </div>
 </div>
@@ -293,13 +275,6 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6ImRh
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top">
-<colgroup>
-<col style="width: 6%">
-<col style="width: 10%">
-<col style="width: 25%">
-<col style="width: 18%">
-<col style="width: 38%">
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: right;">Week</th>
@@ -311,67 +286,81 @@ eyJhdHRyIjp7ImF1dG9ydW4iOmZhbHNlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlfSwiY29kZSI6ImRh
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">37</td>
-<td style="text-align: left;">11 Sept</td>
-<td style="text-align: left;">Introduction to R</td>
-<td style="text-align: left;">Röda rummet</td>
-<td style="text-align: left;">Heden &amp; Ängen</td>
-</tr>
-<tr class="even">
 <td style="text-align: right;">38</td>
-<td style="text-align: left;">18 Sept</td>
-<td style="text-align: left;">Data handling</td>
-<td style="text-align: left;">Röda rummet</td>
-<td style="text-align: left;">Heden &amp; Ängen</td>
+<td style="text-align: left;">2026-09-17</td>
+<td style="text-align: left;">Introduction</td>
+<td style="text-align: left;">Red room</td>
+<td style="text-align: left;">Maskrosen</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: right;">39</td>
-<td style="text-align: left;">25 Sept</td>
-<td style="text-align: left;">Data visualization</td>
-<td style="text-align: left;">Röda rummet</td>
-<td style="text-align: left;">Heden &amp; Kärret</td>
+<td style="text-align: left;">2026-09-24</td>
+<td style="text-align: left;">Data handling</td>
+<td style="text-align: left;">Kärret</td>
+<td style="text-align: left;">Maskrosen</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: right;">40</td>
-<td style="text-align: left;">2 Oct</td>
-<td style="text-align: left;">Logic</td>
-<td style="text-align: left;">Hörsal (A213)</td>
-<td style="text-align: left;">Heden &amp; Ängen</td>
+<td style="text-align: left;">2026-10-01</td>
+<td style="text-align: left;">Data viz</td>
+<td style="text-align: left;">Blue hall</td>
+<td style="text-align: left;">Ängen</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: right;">41</td>
-<td style="text-align: left;">9 Oct</td>
-<td style="text-align: left;">For loops</td>
-<td style="text-align: left;">Röda rummet</td>
-<td style="text-align: left;">Heden &amp; Ängen</td>
+<td style="text-align: left;">2026-10-08</td>
+<td style="text-align: left;">Logic</td>
+<td style="text-align: left;">Red room</td>
+<td style="text-align: left;">Maskrosen</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: right;">42</td>
-<td style="text-align: left;">16 Oct</td>
-<td style="text-align: left;">Functions</td>
-<td style="text-align: left;">Röda rummet</td>
-<td style="text-align: left;">Kärret &amp; Ängen</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">43</td>
-<td style="text-align: left;">23 Oct</td>
-<td style="text-align: left;">RMarkdown</td>
-<td style="text-align: left;">Röda rummet</td>
-<td style="text-align: left;">Heden &amp; Ängen</td>
+<td style="text-align: left;">2026-10-15</td>
+<td style="text-align: left;">Loops</td>
+<td style="text-align: left;">Red room</td>
+<td style="text-align: left;">Maskrosen</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">47</td>
-<td style="text-align: left;">20 Nov</td>
-<td style="text-align: left;">R Packages</td>
-<td style="text-align: left;">Röda rummet</td>
-<td style="text-align: left;">Raggmossan/Vitmossan &amp; Ängen</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: left;">2026-10-22</td>
+<td style="text-align: left;">Functions</td>
+<td style="text-align: left;">Red room</td>
+<td style="text-align: left;">Maskrosen</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">48</td>
-<td style="text-align: left;">27 Nov</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: left;">2026-11-05</td>
+<td style="text-align: left;">RMarkdown</td>
+<td style="text-align: left;">Red room</td>
+<td style="text-align: left;">Maskrosen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">46</td>
+<td style="text-align: left;">2026-11-12</td>
+<td style="text-align: left;">Packages</td>
+<td style="text-align: left;">Red room</td>
+<td style="text-align: left;">Ängen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">47</td>
+<td style="text-align: left;">2026-11-19</td>
 <td style="text-align: left;">Tidyverse</td>
-<td style="text-align: left;">Röda rummet</td>
-<td style="text-align: left;">Kärret &amp; Ängen</td>
+<td style="text-align: left;">Red room</td>
+<td style="text-align: left;">Ängen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">48</td>
+<td style="text-align: left;">2026-11-26</td>
+<td style="text-align: left;">Open</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Ängen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">49</td>
+<td style="text-align: left;">2026-12-03</td>
+<td style="text-align: left;">Open</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Ängen</td>
 </tr>
 </tbody>
 </table>
@@ -594,7 +583,7 @@ W10=
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -717,13 +706,14 @@ W10=
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
