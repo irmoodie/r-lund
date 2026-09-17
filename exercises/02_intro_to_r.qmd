@@ -146,7 +146,7 @@ This lists all the files in your working directory. Does the `.txt` files
 appear? If so, then write and run:
 
 ```r
-data <- read.delim("Simple_data.txt", head=T, sep="\t").
+data <- read.delim("Simple_data.txt", head=T, sep="\t")
 ```
 
 The data file has now been imported to R and stored in the object `data`. An
